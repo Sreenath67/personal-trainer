@@ -1,25 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
+import React, { useState } from "react";
+import PoseDetector from "./components/PoseDetector";
 
 function App() {
+  const [pose, setPose] = useState(null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Personal Trainer App</h1>
+      <PoseDetector onPose={setPose} />
+      {/* Here you can display pose data or pass it to other components */}
     </div>
   );
 }
 
 export default App;
+
