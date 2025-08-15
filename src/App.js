@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import React, { useState } from "react";
 import PoseDetector from "./components/PoseDetector";
+import ExerciseCounter from "./components/ExerciseCounter";
 
 function App() {
   const [pose, setPose] = useState(null);
@@ -10,7 +11,7 @@ function App() {
     <div>
       <h1>Personal Trainer App</h1>
       <PoseDetector onPose={setPose} />
-      {/* Here you can display pose data or pass it to other components */}
+      <ExerciseCounter pose={pose} />
     </div>
   );
 }
